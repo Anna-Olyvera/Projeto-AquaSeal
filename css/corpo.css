@@ -1,0 +1,329 @@
+/*  PRINCIPAL */
+main{
+    margin: 8vh 10vw;
+    display: grid;
+    gap: 8vh;
+}
+
+
+/* SOBRE */
+.sobre{
+    display: grid;
+    gap: 15px;
+}
+
+.sobre p{
+    text-indent: 50px;
+    text-align: justify;
+}
+
+
+/* TESTE */
+#teste{
+    display: grid;
+    gap: 3vw;
+}
+
+#teste h2{
+    display: flex;
+    align-items: end;
+}
+
+.ancoraExpl{
+    margin-left: 15px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #3c949e;
+}
+
+.gridColeta{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+    align-items: center;
+}
+
+.coleta{
+    display: grid;
+    grid-template-columns: 12vw 5vw;
+    gap: 0.5vw;
+    align-items: center;
+}
+
+.coleta h3{
+    text-align: center;
+    max-height: 20vw;
+    font-size: 1.2vw;
+}
+
+input{
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    height: 1.5vw;
+}
+
+input:hover{
+    border: 0.5px solid #9bd8db;
+}
+
+.areaButton{
+    grid-column: 4;
+    grid-row: 1/5;
+    display: flex;
+    gap: 10px;
+    align-self: end;
+}
+
+button{
+    background-color:#9bd8db;
+    border: none;
+    width: 6vw;
+    height: 2.3vw;
+    font-weight: bolder;
+    font-size: 1vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+button img{
+    width: 1.5vw;
+}
+
+.lixeira{
+    width: 50px;
+}
+
+
+/* RESPOSTA */
+.resposta{
+    background-color: rgb(226, 226, 226);
+    padding: 20px;
+    height: 20vh;
+    width: 100%;
+}
+
+
+/* COMO */
+#expl{
+    display: grid;
+    gap: 1.5vw;
+}
+
+#expl p{
+    text-indent: 50px;
+    text-align: justify;
+}
+
+dt{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+dd{
+    font-size: 1.5vw;
+    margin-bottom: 1.5vw;
+    text-align: justify;
+}
+
+
+
+/*                         1023                         */
+@media (max-width: 1023px){
+    /*  PRINCIPAL */
+    main{
+        margin: 8vh 10vw;
+        display: grid;
+        gap: 8vh;
+    }
+
+
+    /* SOBRE */
+    .sobre{
+        gap: 15px;
+    }
+
+    .sobre p{
+        text-indent: 7vw;
+    }
+    
+    #teste{
+        gap: 8vw;
+    }
+    
+    #teste h2{
+        display: flex;
+        gap: 3vw;
+    }
+    
+    /* TESTE */
+    .ancoraExpl{
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: 3vw;
+        font-size: 3.7vw;
+    }
+    
+    .gridColeta{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 4.5vw;
+    }
+
+    .coleta{
+        display: flex;
+        gap: 2vw;
+    }
+
+    .coleta h3{
+        text-align: start;
+        max-width: 51vw;
+        font-size: 4vw;
+    }
+
+    input{
+        width: 18vw;
+        height: 4vw;
+    }
+    
+    input:hover{
+        border: 0.5px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .areaButton{
+        grid-column: 1/5;
+        grid-row: 5;
+        margin-top: 3vw;
+        align-self: center;
+    }
+
+    button{
+        width: 20vw;
+        height: 6vw;
+        font-size: 3.6vw;
+    }
+    
+    button img{
+        width: 4vw;
+    }
+    
+    /* RESPOSTA */
+    .resposta{
+        background-color: rgb(226, 226, 226);
+        padding: 20px;
+        height: 17vh;
+        width: 90%;
+    } 
+
+    /* COMO */
+
+    #expl p{
+        text-indent: 1vw;
+    }
+
+    dt{
+        font-size: 4vw;
+    }
+    
+    dd{
+        font-size: 4vw;
+        margin-bottom: 4vw;
+    }
+}
+
+
+
+/*                         2000                         */
+@media (min-width: 2000px){
+    /* SOBRE */
+    .sobre{
+        gap: 1.5vw;
+    }
+    
+    .sobre p{
+        text-indent: 8vh;
+    }
+    
+
+    /* TESTE */
+    #teste{
+        gap: 1.5vw;
+    }
+    
+    /* TESTE */
+    .ancoraExpl{
+        margin-left: 1.5vw;
+        margin-bottom: 0.5vh;
+        font-size: 1.8vh;
+    }
+    
+    .gridColeta{
+        gap: 50px;
+    }
+    
+    .coleta{
+        gap: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .coleta h3{
+        font-size: 2vh;
+    }
+    
+    input{
+        border-radius: 5px;
+        width: 5vw;
+    }
+    
+    .areaButton{
+        gap: 1vw;
+        margin-bottom: 1vh;
+    }
+    
+    button{
+        width: 7vw;
+        height: 4vh;
+        font-size: 2vh;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+    }
+    
+    button img{
+        width: 2vh;
+    }
+    
+    .lixeira{
+        width: 5vh;
+    }
+    
+
+    /* RESPOSTA */
+    .resposta{
+        padding: 4vh;
+        height: 20vh;
+    }
+    
+
+    /* COMO */
+    #expl{
+        gap: 1.5vw;
+    }
+    
+    #expl p{
+        text-indent: 1vw;
+    }
+
+    dt{
+        font-size: 3vh;
+    }
+    
+    dd{
+        font-size: 3vh;
+        margin-bottom: 1.5vw;
+    }
+}

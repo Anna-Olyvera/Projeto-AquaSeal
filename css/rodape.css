@@ -1,0 +1,168 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 5vh 10vw;
+    justify-content: center;
+    background-color: #3c949e;
+}
+
+.tituloF:first-child{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 11vw 1fr;
+    gap: 2vw;
+    background-color: #d5f2f8;
+    width: 35vw;
+}
+
+.fundoFoto{
+    background-color: #3c949e;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.foto{
+    width: 8vw;
+    height: 8vw;
+    border: 0.6vw solid #d5f2f8;
+    border-radius: 5px 0px 0px 5px ;
+}
+
+.txtCont{
+    display: grid;
+    gap: 1vw;
+    padding: 1vw 1vw 1vw 0px;
+}
+
+.txtCont div{
+    display: grid;
+    gap: 1vw;
+}
+
+.txtCont div a{
+    display: flex;
+    gap: 0.8vw;
+    align-items: center;
+}
+
+.card p{
+    font-size: 1.2vw;
+}
+
+h3{
+    font-size: 1.5vw;
+}
+
+.icon{
+    width: 1.4vw;
+}
+
+
+
+/*                         1023                         */
+@media (max-width: 1023px){
+    footer{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tituloF:first-child{
+        font-size: 4.5vw;
+    }
+    
+    .card{
+        grid-template-columns: 27vw 1fr;
+        gap: 2vw;
+        width: 80vw;
+    }
+
+    .card h3{
+        font-size: 4vw;
+    }
+
+    .card p{
+        font-size: 4vw;
+    }
+
+    .foto{
+        width: 25vw;
+        height: 25vw;
+        border: 1.3vw solid #d5f2f8;
+    }
+
+    .txtCont{
+        gap: 2vw;
+    }
+
+    .txtCont div{
+        gap: 2vw;
+    }
+
+    .icon{
+        width: 4vw;
+    }
+}
+
+
+
+/*                         2000                         */
+@media (min-width: 2000px){
+    footer{
+        gap: 1.3vw;
+    }
+
+    footer p, h3{
+        font-size: 1.3vw;
+    }
+
+    footer a{
+        font-size: 1.3vw;
+    }
+
+    .tituloF:first-child{
+        font-size: 2vw;
+    }
+
+    .card{
+        grid-template-columns: 11vw 1fr;
+        gap: 1.2vw;
+        width: 30vw;
+    }
+
+    .foto{
+        width: 9vw;
+        height: 9vw;
+        border: 0.7vw solid #d5f2f8;
+        border-radius: 12px 0px 0px 12px;
+    }
+
+    .txtCont{
+        gap: 0.6vw;
+        min-height: 11vw;
+    }
+
+    .txtCont div{
+        gap: 0.6vw;
+    }
+
+    .card h3{
+        font-size: 1.6vw;
+    }
+
+    .card p{
+        font-size: 1.4vw;
+    }
+    
+    .icon{
+        width: 1.7vw;
+    }
+}

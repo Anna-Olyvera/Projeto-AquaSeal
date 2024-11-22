@@ -1,0 +1,47 @@
+header{
+    background-color: #9bd8db;
+    height: 6vw;
+    align-items: center;
+    padding: 0vh 10vw;
+    display: flex;
+    gap: 10px;
+}
+
+.logo{
+    height: 2vw;
+    width: 2vw;
+}
+
+header h1{
+    font-size: 2.2vw;
+    color: #024f55;
+}
+
+
+
+/*                         1023                         */
+@media (max-width: 1023px){
+    .logo{
+        height: 5vw;
+        width: 5vw;
+    }
+}
+
+
+
+/*                         2000                         */
+@media (min-width: 2000px) {
+    header{
+        height: 10vh;
+    }
+
+    .logo{
+        height: 5vh;
+        width: 5vh;
+    }
+
+    header h1{
+        font-size: 4vh;
+    }    
+}
+

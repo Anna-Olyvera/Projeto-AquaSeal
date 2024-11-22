@@ -1,0 +1,86 @@
+.txt-banner{
+    display: grid;
+    gap: 20px;
+    position: absolute;
+    z-index: 9999;
+    max-width: 30vw;
+    top: 11vw;
+    left: 10vw;
+}
+
+.txt-banner h2{
+    color: rgb(17, 17, 17);
+    font-size: 2vw;
+}
+
+.t2{
+    display: none;
+}
+
+.txt-banner p{
+    text-align: justify;
+}
+
+img{
+    width: 100%;
+}
+
+.ancoraTeste{
+    background-color: #9bd8db;
+    width: fit-content;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 1.3vw;
+}
+
+
+
+/*                         1023                         */
+@media (max-width: 1023px){
+    .txt-banner{
+        gap: 15px;
+        top: 19vw;
+        max-width: 34vw;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .t1{
+        display: none;
+    }
+
+    .t2{
+        display: block;
+        font-size: 1.5vh;
+    }
+    
+    .txt-banner p{
+        display: none;
+    }
+    
+    .ancoraTeste{
+        font-size: 1.5vh;
+        padding: 8px;
+    }
+}
+
+
+
+/*                         2000                         */
+@media (min-width: 2000px){
+    .txt-banner{
+        gap: 60px;
+        top: 10vw;
+        max-width: 32vw;
+    }
+
+    .txt-banner p{
+        font-size: 3vh;
+    }
+    
+    .ancoraTeste{
+        padding: 25px;
+        border-radius: 7px;
+    }
+}
