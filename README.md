@@ -12,8 +12,8 @@ AquaSeal is a practical tool designed to simplify the understanding of water qua
 
 ## Project contributors
 
-👤 [Ana Oliveira](https://github.com/Anna-Olyvera)
-👤 [Bruna Carvalho](https://github.com/brucarv)
-👤 [João Marinho](https://github.com/joao-felipe-alves-marinho)
-👤 [João Galdino](https://github.com/joaogldn) 
-👤 [Wellerson Morais](https://github.com/WellersonMorais)
+- 👤 [Ana Oliveira](https://github.com/Anna-Olyvera)
+- 👤 [Bruna Carvalho](https://github.com/brucarv)
+- 👤 [João Marinho](https://github.com/joao-felipe-alves-marinho)
+- 👤 [João Galdino](https://github.com/joaogldn) 
+- 👤 [Wellerson Morais](https://github.com/WellersonMorais)
