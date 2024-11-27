@@ -11,8 +11,8 @@ AquaSeal is a practical tool designed to simplify the understanding of water qua
 3. Now, just provide the required information. If you don’t have some of the data, no problem! You can leave it blank, and the AI will analyze our database to generate a default value as a substitute.
 
 ## Project members
-👤 Ana Beatriz Gonçalo de Oliveira;
-👤 Bruna Raissa da Silva Carvalho;
-👤 João Felipe Alves Marinho;
-👤 João José Galdino da Silva Júnior;
+👤 Ana Beatriz Gonçalo de Oliveira; <br>
+👤 Bruna Raissa da Silva Carvalho; <br>
+👤 João Felipe Alves Marinho; <br>
+👤 João José Galdino da Silva Júnior; <br>
 👤 Wellerson Paulo Morais da Silva;
