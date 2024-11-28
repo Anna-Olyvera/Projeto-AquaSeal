@@ -19,12 +19,11 @@ async function enviarParaIA(dados) {
         const resultado = await resposta.json(); // Obtém a resposta da IA
         console.log("Resposta da IA:", resultado);
 
-        return resultado; // Faça algo com o resultado, como exibir na tela
-
+        // Faça algo com o resultado, como exibir na tela
     } catch (erro) {
-        throw new Error(erro.message || "Erro inesperado");
+        console.error("Erro:", erro);
     }
-};
+}
 
 // Exemplo de como usar:
 function guardarDados() {
@@ -47,5 +46,3 @@ function guardarDados() {
     // Envia os dados para a IA
     enviarParaIA(dados);
 }
-
-module.exports = {guardarDados, enviarParaIA};
