@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="shortcut icon" href="imagens/logoICON.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/logoICON.ico') }}" type="image/x-icon">
     <title>AquaSeal</title>
 </head>
 <body>
     <!-- GLOBAL -->
-     <a class="buttonTop" href="#"><img src="imagens/ep--arrow-up-bold.svg" alt="Botão voltar ao topo"></a>
+    <a class="buttonTop" href="#"><img src="{{ url_for('static', filename='imagens/ep--arrow-up-bold.svg') }}" alt="Botão voltar ao topo"></a>
 
 
 
     <!-- CABEÇALHO -->
     <header>
-        <img class="logo" src="imagens/logo.svg" alt="logo">
+        <img class="logo" src="{{ url_for('static', filename='imagens/logo.svg') }}" alt="logo">
         <h1>AquaSeal</h1>
     </header>
 
@@ -29,7 +29,7 @@
             <p>Clean water prevents disease, sustains ecosystems, ensures food security and supports economic activity, and is essential for sustainable development and the general well-being of society. Want to know the quality of your water?</p>
             <a class="ancoraTeste" href="#teste">Try it now!</a>
         </div>
-        <img src="imagens/bannerTeste.jpg" alt="Banner">
+        <img src="{{ url_for('static', filename='imagens/bannerTeste.jpg') }}" alt="Banner">
      </div>
 
 
@@ -45,73 +45,80 @@
 
         <div id="teste">
             <h2>Water quality test <a class="ancoraExpl" href="#expl">Need Help?</a></h2>
-
-            <div class="gridColeta">
+    
+            <form method="post" action="/predict" class="gridColeta">
                 <div class="coleta">
                     <h3>Total Alkalinity:</h3>
-                    <input class="alcalinidade" type="number">
+                    <input class="alcalinidade" type="number" name="alcalinidade" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Total Ammonia:</h3>
-                    <input class="amonia" type="number">
+                    <input class="amonia" type="number" name="amonia" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Biochemical Oxygen Demand (BOD):</h3>
-                    <input class="bOD" type="number">
+                    <input class="bOD" type="number" name="bOD" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Chloride:</h3>
-                    <input class="cloreto" type="number">
+                    <input class="cloreto" type="number" name="cloreto" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Conductivity:</h3>
-                    <input class="condutividade" type="number">
+                    <input class="condutividade" type="number" name="condutividade" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Dissolved Oxygen:</h3>
-                    <input class="oxigenioD" type="number">
+                    <input class="oxigenioD" type="number" name="oxigenioD" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Orthophosphate (as P):</h3>
-                    <input class="ortofosfato" type="number">
+                    <input class="ortofosfato" type="number" name="ortofosfato" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>PH:</h3>
-                    <input class="ph" type="number">
+                    <input class="ph" type="number" name="ph" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Temperature:</h3>
-                    <input class="temperatura" type="number">
+                    <input class="temperatura" type="number" name="temperatura" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>Total Hardness (as CaCO3):</h3>
-                    <input class="durezaT" type="number">
+                    <input class="durezaT" type="number" name="durezaT" required>
                 </div>
-
+    
                 <div class="coleta">
                     <h3>True Color:</h3>
-                    <input class="corV" type="number">
+                    <input class="corV" type="number" name="corV" required>
                 </div>
-
+    
                 <div class="areaButton">
-                    <button onclick="guardarDados()">search</button>
-                    <button onclick="limparInputs()" class="lixeira"><img src="imagens/f7--trash.svg" alt="lixeira"></button>
+                    <button type="submit">search</button>
+                    <button onclick="limparInputs()" class="lixeira"><img
+                            src="{{ url_for('static', filename='imagens/f7--trash.svg') }}" alt="lixeira"></button>
                 </div>
-            </div>
-            <script src="javascript/script.js"></script>
-            <script src="javascript/scApagarampos.js"></script>
-
+            </form>
+            <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+            <script src="{{ url_for('static', filename='javascript/scApagarampos.js') }}"></script>
+    
             <div class="resposta">
-                <p>After carrying out the research, the data will be generated.</p>
+                {% if regresion_prediction and classification %}
+                    <h3>Result:</h3>
+                    <p>IQA: {{ regresion_prediction }}</p>
+                    <p>Water quality: {{ classification }}</p>
+                {% else %}
+                    <p>After carrying out the research, the data will be generated.</p>
+                {% endif %}
             </div>
         </div>
 
@@ -163,67 +170,68 @@
      <footer>
         <h1 class="tituloF">Development Team</h1>
         <div class="card">
-            <div class="fundoFoto"><img class="foto" src="imagens/ana.webp" alt="foto"></div>
+            <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/ana.webp') }}" alt="foto"></div>
             <div class="txtCont">
                 <h3 class="nome">Ana Oliveira</h3>
                 <p class="cargo">Front-end Developer</p>
                 <div>
-                    <a href="https://github.com/Anna-Olyvera?tab=repositories" target="_blank"><img class="icon" src="imagens/jam--github.svg" alt="icone GitHub">Ana_Olyvera</a>
-                    <a href="https://www.linkedin.com/in/ana-oliveira-21439924b/" target="_blank"> <img class="icon" src="imagens/mdi--linkedin.svg" alt="icone LinkedIn">Ana Oliveira</a>
+                    <a href="https://github.com/Anna-Olyvera?tab=repositories" target="_blank"><img class="icon" src="{{ url_for('static', filename='imagens/jam--github.svg') }}" alt="icone GitHub">Ana_Olyvera</a>
+                    <a href="https://www.linkedin.com/in/ana-oliveira-21439924b/" target="_blank"> <img class="icon" src="{{ url_for('static', filename='imagens/mdi--linkedin.svg') }}" alt="icone LinkedIn">Ana Oliveira</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="fundoFoto"><img class="foto" src="imagens/bruna.jpg" alt="foto"></div>
+            <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/bruna.jpg') }}" alt="foto"></div>
             <div class="txtCont">
                 <h3 class="nome">Bruna Carvalho</h3>
                 <p class="cargo">Project Manager & Test Analyst</p>
                 <div>
-                    <a href="https://github.com/brucarv" target="_blank"><img class="icon" src="imagens/jam--github.svg" alt="icone GitHub">brucarv</a>
-                    <a href="https://www.linkedin.com/in/bruna-carvalho-41389326b" target="_blank"> <img class="icon" src="imagens/mdi--linkedin.svg" alt="icone LinkedIn">Bruna Carvalho</a>
+                    <a href="https://github.com/brucarv" target="_blank"><img class="icon" src="{{ url_for('static', filename='imagens/jam--github.svg') }}" alt="icone GitHub">brucarv</a>
+                    <a href="https://www.linkedin.com/in/bruna-carvalho-41389326b" target="_blank"> <img class="icon" src="{{ url_for('static', filename='imagens/mdi--linkedin.svg') }}" alt="icone LinkedIn">Bruna Carvalho</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="fundoFoto"><img class="foto" src="imagens/joaoF.jpg" alt="foto"></div>
+            <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/joaoF.jpg') }}" alt="foto"></div>
             <div class="txtCont">
                 <h3 class="nome">João Marinho</h3>
                 <p class="cargo">Data Scientist</p>
                 <div>
-                    <a href="https://github.com/joao-felipe-alves-marinho" target="_blank"><img class="icon" src="imagens/jam--github.svg" alt="icone GitHub">joao-felipe-alves-marinho</a>
-                    <a href="https://www.linkedin.com/in/joao-felipe-alves-marinho/" target="_blank"> <img class="icon" src="imagens/mdi--linkedin.svg" alt="icone LinkedIn">João Felipe Alves Marinho</a>
+                    <a href="https://github.com/joao-felipe-alves-marinho" target="_blank"><img class="icon" src="{{ url_for('static', filename='imagens/jam--github.svg') }}" alt="icone GitHub">joao-felipe-alves-marinho</a>
+                    <a href="https://www.linkedin.com/in/joao-felipe-alves-marinho/" target="_blank"> <img class="icon" src="{{ url_for('static', filename='imagens/mdi--linkedin.svg') }}" alt="icone LinkedIn">João Felipe Alves Marinho</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="fundoFoto"><img class="foto" src="imagens/joaoH.jpg" alt="foto"></div>
+            <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/joaoH.jpg') }}" alt="foto"></div>
             <div class="txtCont">
                 <h3 class="nome">João Galdino</h3>
                 <p class="cargo">Test Analyst</p>
                 <div>
-                    <a href="https://github.com/joaogldn" target="_blank"><img class="icon" src="imagens/jam--github.svg" alt="icone GitHub">joaogldn</a>
-                    <a href="https://www.linkedin.com/in/joaogaldino7/" target="_blank"> <img class="icon" src="imagens/mdi--linkedin.svg" alt="icone LinkedIn">João Galdino</a>
+                    <a href="https://github.com/joaogldn" target="_blank"><img class="icon" src="{{ url_for('static', filename='imagens/jam--github.svg') }}" alt="icone GitHub">joaogldn</a>
+                    <a href="https://www.linkedin.com/in/joaogaldino7/" target="_blank"> <img class="icon" src="{{ url_for('static', filename='imagens/mdi--linkedin.svg') }}" alt="icone LinkedIn">João Galdino</a>
                 </div>
             </div>
         </div>
 
         <div class="card">
-            <div class="fundoFoto"><img class="foto" src="imagens/wellerson.jpg" alt="foto"></div>
+            <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/wellerson.jpg') }}" alt="foto"></div>
+            
             <div class="txtCont">
                 <h3 class="nome">Wellerson Morais</h3>
                 <p class="cargo">QA Analyst & Test Analyst</p>
                 <div>
-                    <a href="https://github.com/WellersonMorais" target="_blank"><img class="icon" src="imagens/jam--github.svg" alt="icone GitHub">WellersonMorais</a>
-                    <a href="https://www.linkedin.com/in/wellerson-paulo-61289326butm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"> <img class="icon" src="imagens/mdi--linkedin.svg" alt="icone LinkedIn">Wellerson Paulo</a>
+                    <a href="https://github.com/WellersonMorais" target="_blank"><img class="icon" src="{{ url_for('static', filename='imagens/jam--github.svg') }}" alt="icone GitHub">WellersonMorais</a>
+                    <a href="https://www.linkedin.com/in/wellerson-paulo-61289326butm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"> <img class="icon" src="{{ url_for('static', filename='imagens/mdi--linkedin.svg') }}" alt="icone LinkedIn">Wellerson Paulo</a>
                 </div>
             </div>
         </div>
      </footer>
 
      <!-- IMPORT JS -->
-      <script src="javascript/scButtonTop.js"></script>
+     <script src="{{ url_for('static', filename='javascript/scButtonTop.js') }}"></script>
 </body>
 </html>
