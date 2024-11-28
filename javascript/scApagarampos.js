@@ -9,3 +9,5 @@ function limparInputs() {
 
     console.log("Todos os campos foram limpos.");
 }
+
+module.exports = {limparInputs};
