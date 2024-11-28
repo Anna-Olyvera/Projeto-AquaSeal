@@ -4,7 +4,7 @@
 AquaSeal is a practical tool designed to simplify the understanding of water quality. It is a website integrated with artificial intelligence (AI) that analyzes user-provided data and delivers clear and objective results. The project was developed as part of an application for a university assignment.
 
 ## Instructions for Use
-1. Access the website: https://anna-olyvera.github.io/Projeto-AquaSeal/
+1. Access the website: https://projeto-aquaseal.onrender.com 
 
 2. You should navigate through the website to the "Water Quality Test" section.
 
