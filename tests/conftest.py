@@ -1,10 +1,11 @@
 import pickle
 import pytest
 from app import create_app
+import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import threading
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture
@@ -35,9 +36,14 @@ def live_server():
 
     server_thread.join(1)
 
+
 @pytest.fixture(scope="module")
 def browser():
-    """Set up a Selenium WebDriver instance."""
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    """Set up a Selenium WebDriver instance in headless mode."""
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     yield driver
     driver.quit()
