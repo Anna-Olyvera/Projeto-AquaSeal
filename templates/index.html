@@ -45,63 +45,63 @@
 
         <div id="teste">
             <h2>Water quality test <a class="ancoraExpl" href="#expl">Need Help?</a></h2>
-    
+
             <form method="post" action="/predict" class="gridColeta">
                 <div class="coleta">
                     <h3>Total Alkalinity:</h3>
                     <input class="alcalinidade" type="number" name="alcalinidade" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Total Ammonia:</h3>
                     <input class="amonia" type="number" name="amonia" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Biochemical Oxygen Demand (BOD):</h3>
                     <input class="bOD" type="number" name="bOD" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Chloride:</h3>
                     <input class="cloreto" type="number" name="cloreto" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Conductivity:</h3>
                     <input class="condutividade" type="number" name="condutividade" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Dissolved Oxygen:</h3>
                     <input class="oxigenioD" type="number" name="oxigenioD" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Orthophosphate (as P):</h3>
                     <input class="ortofosfato" type="number" name="ortofosfato" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>PH:</h3>
                     <input class="ph" type="number" name="ph" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Temperature:</h3>
                     <input class="temperatura" type="number" name="temperatura" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>Total Hardness (as CaCO3):</h3>
                     <input class="durezaT" type="number" name="durezaT" required>
                 </div>
-    
+
                 <div class="coleta">
                     <h3>True Color:</h3>
                     <input class="corV" type="number" name="corV" required>
                 </div>
-    
+
                 <div class="areaButton">
                     <button type="submit">search</button>
                     <button onclick="limparInputs()" class="lixeira"><img
@@ -110,7 +110,7 @@
             </form>
             <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
             <script src="{{ url_for('static', filename='javascript/scApagarampos.js') }}"></script>
-    
+
             <div class="resposta">
                 {% if regresion_prediction and classification %}
                     <h3>Result:</h3>
@@ -124,9 +124,7 @@
 
         <div id="expl">
             <h2>How to perform the tests?</h2>
-            <p>To take the test, simply enter the requested data in the respective fields. If you do not know any of them, leave it blank. The system will use AI to process and compensate for this lack. However, all the requested data is essential for a more accurate result, so if you leave a field blank, the answer may be less accurate.</p>
-            <p>Data that will be passed to AI:</p>
-
+            <p>To take the test, simply enter the requested data in the respective fields. If you do not know what the fields means bellow is the data fields that will be passed to AI and what they are:</p>
             <dl>
                 <dt>Biochemical Oxygen Demand (BOD)</dt>
                 <dd>Biochemical Oxygen Demand measures the amount of oxygen required to break down organic matter in the water. High values indicate organic contamination, which can lead to the proliferation of harmful microorganisms.</dd>
@@ -219,7 +217,7 @@
 
         <div class="card">
             <div class="fundoFoto"><img class="foto" src="{{ url_for('static', filename='imagens/wellerson.jpg') }}" alt="foto"></div>
-            
+
             <div class="txtCont">
                 <h3 class="nome">Wellerson Morais</h3>
                 <p class="cargo">QA Analyst & Test Analyst</p>
