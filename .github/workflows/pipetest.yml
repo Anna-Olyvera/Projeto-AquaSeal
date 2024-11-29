@@ -6,6 +6,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+          selenium:
+            image: selenium/standalone-chrome:latest
+            options: >-
+              --shm-size 2g 
+
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
